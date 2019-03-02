@@ -18,7 +18,7 @@ import (
 var (
 	netOnce = &sync.Once{}
 	Net, _  = tableflip.New(tableflip.Options{UpgradeTimeout: tableflip.DefaultUpgradeTimeout})
-	N = Net.Fds
+	N       = Net.Fds
 )
 
 func InitGraceUpgrade(exit context.CancelFunc, timeout time.Duration, sig os.Signal) {

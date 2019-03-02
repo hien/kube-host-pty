@@ -14,9 +14,9 @@ import (
 	"golang.org/x/sys/unix"
 
 	"arhat.dev/kube-host-pty/pkg/constant"
+	"arhat.dev/kube-host-pty/pkg/pty"
 	"arhat.dev/kube-host-pty/pkg/util"
 	"arhat.dev/kube-host-pty/pkg/util/log"
-	"arhat.dev/kube-host-pty/pkg/pty"
 )
 
 const (

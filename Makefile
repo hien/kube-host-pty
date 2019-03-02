@@ -2,7 +2,6 @@ include scripts/tools.mk
 
 # set default build target if empty
 MAKECMDGOALS ?= pty-device-plugin
-.PHONY: .build
 .build:
 	$(GOBUILD) -o build/$(MAKECMDGOALS) cmd/$(MAKECMDGOALS)/*.go
 
@@ -11,3 +10,9 @@ pty-client: .build
 kubectl-pty: .build
 
 include scripts/images.mk
+
+.test:
+	$(GOTEST) ./$(PKG)
+
+test: $(eval PKG := ...) .test
+test-pkg: $(eval PKG := pkg/...) .test

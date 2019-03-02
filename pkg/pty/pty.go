@@ -1,12 +1,13 @@
 package pty
 
 import (
-	"github.com/kr/pty"
-	"google.golang.org/grpc"
 	"os"
 	"os/exec"
 	"runtime"
 	"sync/atomic"
+
+	"github.com/kr/pty"
+	"google.golang.org/grpc"
 
 	"arhat.dev/kube-host-pty/pkg/util"
 )

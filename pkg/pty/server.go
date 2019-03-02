@@ -3,6 +3,7 @@ package pty
 import (
 	"bufio"
 	"context"
+
 	"github.com/kr/pty"
 
 	"arhat.dev/kube-host-pty/pkg/util"

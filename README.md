@@ -1,5 +1,7 @@
 # kube-host-pty
 
+[![Build Status](https://travis-ci.com/arhat-dev/kube-host-pty.svg)](https://travis-ci.com/arhat-dev/kube-host-pty) [![GoDoc](https://godoc.org/arhat.dev/kube-host-pty?status.svg)](https://godoc.org/arhat.dev/kube-host-pty) [![GoReportCard](https://goreportcard.com/badge/arhat-dev/kube-host-pty)](https://goreportcard.com/report/arhat.dev/kube-host-pty) [![codecov](https://codecov.io/gh/arhat-dev/kube-host-pty/branch/master/graph/badge.svg)](https://codecov.io/gh/arhat-dev/kube-host-pty)
+
 a simple kubernetes device-plugin and toolset to access host pty
 
 __WARNING: THIS PROJECT WORKS FOR ME, BUT NOT TESTED, USE AT YOUR OWN RISK__
@@ -82,7 +84,7 @@ __NOTICE__: This is one of my hobby projects, due to lack of hours in a day, ite
 [![GitHub license](https://img.shields.io/github/license/arhat-dev/kube-host-pty.svg)](https://github.com/arhat-dev/kube-host-pty/blob/master/LICENSE.txt)
 
 ```text
-Copyright arhat-dev (https://github.com/arhat-dev)
+Copyright arhat.dev (github.com/arhat-dev)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

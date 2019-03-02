@@ -7,9 +7,9 @@ import (
 )
 
 var (
-	branch    string
-	commit    string
-	version   string
+	branch  string
+	commit  string
+	version string
 )
 
 type info struct {

@@ -1,0 +1,43 @@
+sudo: true
+language: go
+
+os:
+  - linux
+
+go:
+  - 1.11.x
+  - tip
+
+env:
+  global:
+    # include $HOME/.local/bin for `aws`
+    - PATH=$HOME/.local/bin:$PATH
+
+before_install:
+  # set up awscli packages
+  - pip install --user awscli
+  - mkdir -p ~/$TRAVIS_BUILD_NUMBER
+
+jobs:
+  include:
+    - stage: test
+      env:
+        - GO111MODULE=on
+        - CGO_ENABLED=0
+      script:
+        - make test
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+    - stage: build images
+      if: branch = master
+      script:
+        - make pty-device-plugin-image
+        - make pty-client-image
+        - docker images
+        - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+        - make pty-device-plugin-image-push
+        - make pty-client-image-push
+
+stages:
+  - test
+  - build images
