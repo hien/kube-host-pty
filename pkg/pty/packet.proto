@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pty;
+
+service Terminal {
+    rpc Attach (stream Bytes) returns (stream Bytes);
+    rpc Resize (Size) returns (Size);
+}
+
+message Bytes {
+    bytes data = 1;
+    bool completed = 2;
+}
+
+message Size {
+    uint32 cols = 1;
+    uint32 rows = 2;
+}

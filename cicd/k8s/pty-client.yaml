@@ -1,0 +1,35 @@
+# deploy a temporary pty-client pod to your node
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pty-client-at-my-kube-node
+  labels:
+    app.kubernetes.io/name: pty-client
+spec:
+  # affinity:
+  #   nodeAffinity:
+  #     requiredDuringSchedulingIgnoredDuringExecution:
+  #       nodeSelectorTerms:
+  #       - matchExpressions:
+  #         - key: kubernetes.io/hostname
+  #           operator: In
+  #           values: ["my-kube-node"]
+
+  # use either `nodeAffinity` or `nodeSelector`
+  nodeSelector:
+    kubernetes.io/hostname: my-kube-node
+  containers:
+  - name: pty-client
+    image: arhatdev/pty-client:latest
+    command:
+    - /app
+    - --log=fatal
+    # `stdin` and `tty` must be true to get client running properly
+    stdin: true
+    tty: true
+    resources:
+      limits:
+        # pty-device-plugin won't allocate more than one pty to any pod
+        # always set to 1
+        arhat.dev/pty: 1
+  restartPolicy: Never

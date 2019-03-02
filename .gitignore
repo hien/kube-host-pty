@@ -1,0 +1,8 @@
+/build
+
+dive.log
+
+/.vscode
+/.idea
+
+/.cicd
