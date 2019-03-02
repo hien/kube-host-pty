@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/arhat-dev/kube-host-pty.svg)](https://travis-ci.com/arhat-dev/kube-host-pty) [![GoDoc](https://godoc.org/arhat.dev/kube-host-pty?status.svg)](https://godoc.org/arhat.dev/kube-host-pty) [![GoReportCard](https://goreportcard.com/badge/arhat-dev/kube-host-pty)](https://goreportcard.com/report/arhat.dev/kube-host-pty) [![codecov](https://codecov.io/gh/arhat-dev/kube-host-pty/branch/master/graph/badge.svg)](https://codecov.io/gh/arhat-dev/kube-host-pty)
 
-a simple kubernetes device-plugin and toolset to access host pty
+Simple kubernetes device-plugin and toolset to access host pty
 
 __WARNING: THIS PROJECT WORKS FOR ME, BUT NOT TESTED, USE AT YOUR OWN RISK__
 
