@@ -12,6 +12,8 @@ env:
   global:
     # include $HOME/.local/bin for `aws`
     - PATH=$HOME/.local/bin:$PATH
+    - GO111MODULE=on
+    - CGO_ENABLED=0
 
 before_install:
   # set up awscli packages
@@ -21,9 +23,6 @@ before_install:
 jobs:
   include:
     - stage: test
-      env:
-        - GO111MODULE=on
-        - CGO_ENABLED=0
       script:
         - make test
       after_success:
